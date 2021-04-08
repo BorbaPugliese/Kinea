@@ -1,0 +1,220 @@
+﻿
+CREATE TABLE BD_Incorporacao_Andar 
+    (
+     ID_Andar INTEGER NOT NULL , 
+     ID_Bloco INTEGER NOT NULL , 
+     Andar VARCHAR (max) 
+    )
+GO
+
+CREATE TABLE BD_Incorporacao_Bloco 
+    (
+     ID_Projeto INTEGER NOT NULL , 
+     ID_Bloco INTEGER NOT NULL , 
+     NomeBloco VARCHAR (max) 
+    )
+GO
+
+CREATE TABLE BD_Incorporacao_Classificação 
+    (
+     ID_Classificacao INTEGER NOT NULL , 
+     Classificação VARCHAR (max) 
+    )
+GO
+
+CREATE TABLE BD_Incorporacao_Fluxo 
+    (
+     ID_Fluxo INTEGER NOT NULL , 
+     ID_Projeto INTEGER NOT NULL, 
+     BaseData DATE NOT NULL , 
+     Data DATE , 
+     Vendido BIGINT , 
+     AVender BIGINT , 
+     PermutaKinea BIGINT,
+     PermutaLDI BIGINT,
+     Impostos BIGINT,
+     CustoDeObra BIGINT,
+     TaxaAdminObra BIGINT,
+     Carrego BIGINT,
+     Incorporacao BIGINT,
+     ComercialMarketing BIGINT,
+     TaxaGestaoImob BIGINT,
+     OutrasDespesas BIGINT,
+     OutrasReceitas BIGINT,
+     Terreno BIGINT,
+     CEPAC BIGINT,
+     RecDespFinanceiras BIGINT,
+     Aportes BIGINT,
+     Distribuicoes BIGINT,
+     CaixaFinalEfetivo BIGINT,
+     SaldoAcumulado BIGINT,
+     SaldoNominal BIGINT , 
+     SaldoReal BIGINT 
+     PercentualMesVendas BIGINT , 
+     PercentualAcumuladoVendas BIGINT
+    )
+GO
+
+CREATE TABLE BD_Incorporacao_Fundos 
+    (
+     ID_Fundo INTEGER NOT NULL , 
+     Nome VARCHAR (max) , 
+     Ticker VARCHAR (max) , 
+     DataInicio DATE , 
+     DataTermino DATE , 
+     Sócio VARCHAR (max) , 
+     Responsável VARCHAR (max) 
+    )
+GO
+
+CREATE TABLE BD_Incorporacao_IndicadoresGerais 
+    (
+     ID_Projeto INTEGER NOT NULL , 
+     ID_Fluxo INTEGER NOT NULL , 
+     DataBaseTerreno DATE , 
+     DataBaseObra DATE , 
+     ValorMetroTerreno BIGINT , 
+     ValorMetroObra BIGINT ,
+     AreadoTerreno BIGINT , 
+     ValordoTerreno BIGINT 
+    )
+GO
+
+CREATE TABLE BD_Incorporacao_IndicadoresMensais 
+    (
+     ID_Fluxo INTEGER NOT NULL , 
+     TIRReal FLOAT , 
+     TIRNominal FLOAT , 
+     Inadimplência BIGINT , 
+     ValorMetroHistórico BIGINT , 
+     ValorMetroEstoque BIGINT , 
+     Lucro BIGINT , 
+     Performance FLOAT , 
+     LTV FLOAT , 
+     PercentualAvançoObra FLOAT ,
+     BD_Incorporacao_Fluxo_Data DATE,
+     Caixa BIGINT, 
+     Receita BIGINT, 
+     ReceitaPermuta BIGINT, 
+     Impostos BIGINT, 
+     CustodeObra BIGINT, 
+     TaxaAdminObra BIGINT, 
+     Carrego BIGINT, 
+     Incorporacao BIGINT, 
+     Marketing BIGINT, 
+     TaxaGestaoImob BIGINT, 
+     OutrasDespesas BIGINT, 
+     TotalDespesas BIGINT,
+     TerrenoCEPAC BIGINT, 
+     RecDespFinanceiras BIGINT, 
+     NAVTotal BIGINT, 
+     NAVSCP BIGINT, 
+     TIRRealProjeto FLOAT, 
+     TIRNominalProjeto FLOAT, 
+     TIRRealHolding FLOAT, 
+     TIRRealHoldingPosPerf FLOAT, 
+     TIRNominalHolding FLOAT, 
+     Multiplo FLOAT
+    )
+GO
+
+CREATE TABLE BD_Incorporacao_Projetos 
+    (
+     ID_Projeto INTEGER NOT NULL , 
+     ID_Fundo INTEGER NOT NULL , 
+     DataInvestimento DATE , 
+     PercentualPermuta FLOAT , 
+     VGV BIGINT , 
+     Lançamento DATE , 
+     InicioObra DATE , 
+     EntregaChaves DATE , 
+     TerminoProjeto DATE , 
+     Estado VARCHAR (max) , 
+     Cidade VARCHAR (max) , 
+     Bairro VARCHAR (max) , 
+     Endereço VARCHAR (max) , 
+     ÁreaTerreno BIGINT , 
+     ValorInvestido BIGINT , 
+     DataAprovação DATE , 
+     ValorMetroAprovado BIGINT , 
+     TIRAprovada FLOAT , 
+     MúltiploAprovado FLOAT , 
+    )
+GO
+
+CREATE TABLE BD_Incorporacao_Tipo 
+    (
+     ID_Tipo INTEGER NOT NULL , 
+     Tipo VARCHAR (max) 
+    )
+GO
+
+CREATE TABLE BD_Incorporacao_Unidades 
+    (
+     ID_Unidade INTEGER NOT NULL , 
+     ID_Andar INTEGER NOT NULL , 
+     ID_Tipo INTEGER NOT NULL , 
+     ID_Classificacao INTEGER NOT NULL , 
+     NúmeroUnidade VARCHAR (max) , 
+     Área FLOAT , 
+     Status VARCHAR (max) ,
+     DataVenda DATE  , 
+     MesVenda DATE , 
+     ValorVendidoOriginal INTEGER , 
+     PreçoPorMetroQVendido INTEGER
+    )
+GO
+
+CREATE TABLE BD_Incorporacao_Investidores
+    (
+     ID_Projeto INTEGER NOT NULL , 
+     ID_Fluxo INTEGER NOT NULL,
+     DataInvestimento DATE , 
+     SCP1 BIGINT ,
+     SCP2 BIGINT ,
+     SCP3 BIGINT ,
+     SCP4 BIGINT ,
+     SCP5 BIGINT ,
+     SCP6 BIGINT ,
+     SCP7 BIGINT ,
+     SCP8 BIGINT ,
+     SCP9 BIGINT ,
+     SCP10 BIGINT ,
+     SCP11 BIGINT ,
+     SCP12 BIGINT ,
+     SCP13 BIGINT ,  
+    )
+GO
+
+CREATE TABLE BD_Incorporacao_Investidores_BandeiraCo
+    (
+     ID_Projeto INTEGER NOT NULL , 
+     ID_Fluxo INTEGER NOT NULL ,
+     BaseData DATE ,
+     Data DATE , 
+     ChamadaEfetiva INTEGER , 
+     DistribuicaoEfetiva INTEGER ,
+     ChamadaEquity INTEGER ,
+     ChamadaPermuta INTEGER ,
+     SPEBandeiraIncorporacaoEquity INTEGER ,
+     SPEBandeiraIncorporacaoPermuta INTEGER ,
+     SPEBandeiraIncorporacao INTEGER ,
+     Impostos INTEGER ,
+     Auditoria INTEGER ,
+     MonitoramentoObra INTEGER ,
+     Juridico INTEGER ,
+     TaxaAdministracao INTEGER ,
+     TaxaPerfomancePermutas INTEGER ,
+     Contabilidade INTEGER ,
+     OutrasDespesas INTEGER ,
+     OutrasReceitas INTEGER ,
+     SaldoNominal INTEGER ,
+     SaldoAcumulado INTEGER ,
+     SaldoReal INTEGER ,
+     SaldoRealAcumulado INTEGER ,
+     BasePerformance INTEGER ,
+     Performance INTEGER ,
+     SaldoNominalPosPerformance INTEGER ,
+     SaldoAcumuladoNominalPosPerformance INTEGER ,
+     SaldoRealPosPerformance INTEGER 
+     )
