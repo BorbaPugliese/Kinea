@@ -1,0 +1,7 @@
+*Como transferir os dados das planilhas da Incorporadora e do Socio para a planilha principal?*
+
+1- Arraste os arquivos da Incorporadora, Socio e da planilha principal para a mesma pasta dos arquivos em python
+2- Mude o nome dos arquivos da Incorporadora, Socio e da planilha principal para planilhaIncoporadora, planilhaSocio e planilhaPrincipal, respectivamente.
+3- Abra e rode o arquivo python chamado "pythonKinea" (obs: não deixe o planilhaPrincipal aberto quando rodar o código)
+4- Espere finalizar e pronto! Os dados foram enviados para a planilha principal (obs: foi criado um planilhaIncorporadoraConverted, pois o programa utiliza bibliotecas que só funcionam com arquivos .xlsx)
+5- Abra o planilhaPrincipal e pressione F9 para ter certeza de que todas as fórmulas foram recalculadas. 
